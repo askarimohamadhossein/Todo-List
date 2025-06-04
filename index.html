@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>Vite + TS</title>
+  </head>
+  <body class="bg-zinc-900 text-white font-sans min-h-screen">
+    <div>
+      <!-- Header -->
+      <header
+        class="flex items-center justify-center mb-10 bg-[#0D0D0D] w-full h-48"
+      >
+        <h1 class="text-4xl font-bold flex items-center gap-2">
+          <span class="text-cyan-400">🚀</span>
+          <span
+            class="bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text"
+            >todo</span
+          >
+        </h1>
+      </header>
+
+      <div class="max-w-2xl mx-auto -mt-16">
+        <!-- Add Task -->
+        <form id="todo-form" class="flex gap-2 mb-16">
+          <input
+            id="todo-input"
+            type="text"
+            placeholder="Add a new task"
+            class="flex-grow bg-zinc-800 text-white placeholder:text-zinc-400 px-4 py-2 rounded-lg border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+          <button
+            type="submit"
+            class="bg-blue-400 hover:bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center gap-1"
+          >
+            Create <span class="text-white text-xl mb-1">+</span>
+          </button>
+        </form>
+
+        <!-- Stats -->
+        <div class="flex justify-between text-sm mb-4">
+          <div class="text-cyan-400">
+            Tasks Created
+            <span
+              id="created-count"
+              class="bg-zinc-700 text-white px-2 py-0.5 rounded-full ml-1"
+              >0</span
+            >
+          </div>
+          <div class="text-blue-500">
+            Completed
+            <span
+              id="completed-count"
+              class="bg-zinc-700 text-white px-2 py-0.5 rounded-full ml-1"
+              >0</span
+            >
+          </div>
+        </div>
+
+        <!-- Task List -->
+        <ul id="todo-list" class="space-y-2 border-t-2 border-gray-700/50"></ul>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="text-center text-zinc-500 mt-12 hidden">
+          <div class="text-4xl mb-4">📄</div>
+          <p class="font-semibold">No tasks yet</p>
+          <p class="text-sm">Create tasks and organize your to-do items</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      id="modal"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50"
+    >
+      <div class="bg-zinc-800 p-6 rounded-lg max-w-sm w-full shadow-lg">
+        <h2 class="text-lg font-bold mb-2">Are you sure?</h2>
+        <p class="text-sm text-zinc-400 mb-4">
+          This task will be permanently deleted.
+        </p>
+        <div class="flex justify-end gap-2">
+          <button
+            id="cancel-btn"
+            class="px-4 py-1 rounded bg-zinc-600 hover:bg-zinc-500 text-white"
+          >
+            Cancel
+          </button>
+          <button
+            id="confirm-btn"
+            class="px-4 py-1 rounded bg-red-600 hover:bg-red-500 text-white"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
