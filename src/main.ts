@@ -16,13 +16,7 @@ const modal = document.querySelector<HTMLDivElement>("#modal")!;
 const confirmBtn = document.querySelector<HTMLButtonElement>("#confirm-btn");
 const cancelBtn = document.querySelector<HTMLButtonElement>("#cancel-btn");
 
-let todos: TTodo[] = [
-  {
-    id: "xfckvl;xcmv",
-    text: "temp",
-    completed: false,
-  },
-];
+let todos: TTodo[] = [];
 
 let todoToDelete: string | null = null;
 
